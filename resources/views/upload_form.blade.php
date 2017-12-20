@@ -100,28 +100,9 @@ ol li a{color:#fff;}
 </style>
 </head>
 <body>
-  <h1 style="position:absolute;left:45%;top:20%;color:white">Welcome, {{ $id}}</h1>
-  <ul>
-    <li style="position:absolute;left:15%">
-      <a href="/welcome/student/{{$id}}/formlist">
-        <h2>Fill a form</h2>
-        <p>Click to choose the form you need.</p>
-      </a>
-    </li>
-    
-	 <li style="position:absolute;left:70%">
-      <a href="#">
-        <h2>Search</h2>
-        <p>Find professors who specialize in your field of interest.</p>
-      </a>
-    </li>
-   
-    <li style="position:absolute;left:43%;top:60%">
-      <a href="#">
-        <h2>Profile</h2>
-        <p>A resume is like software. Unless updated, it becomes obsolete.</p>
-      </a>
-    </li>
-  </ul>
+  <form method="post" enctype="multipart/form-data" action="/welcome/student/{{$data['id']}}/formlist/{{$data['form']}}/upload/{{$data['f']}}/{{$data['deadline']}}/upload_file">
+    <input type="file" name="file" />
+    <input type="submit" name="submit" value="upload" />
+</form>
 </body>
 </html>

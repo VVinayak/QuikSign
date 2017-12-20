@@ -1,14 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title>QuikSign</title>
+
+
+
+
+
 <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css"> 
-<style type="text/css">
-*{
-  margin:0;
-  padding:0;
+<script>
+function download(name)
+{
+window.location.href="http://spider.nitt.edu/~adityabalaji/"+name+".docx";
 }
+function redir(name)
+{
+window.location.href=name;
+}
+</script>
+<style type="text/css">
+
+   .sun-flower-button {
+  position: relative;
+  vertical-align: top;
+  width: 115%;
+  height: 60px;
+  padding: 0;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #f1c40f;
+  border: 0;
+  border-bottom: 2px solid #e2b607;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #e2b607;
+  box-shadow: inset 0 -2px #e2b607;
+}
+.sun-flower-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 body{
   font-family:arial,sans-serif;
   font-size:100%;
@@ -98,30 +129,23 @@ ol{text-align:center;}
 ol li{display:inline;padding-right:1em;}
 ol li a{color:#fff;}
 </style>
-</head>
-<body>
-  <h1 style="position:absolute;left:45%;top:20%;color:white">Welcome, {{ $id}}</h1>
+
+
+  
   <ul>
-    <li style="position:absolute;left:15%">
-      <a href="/welcome/student/{{$id}}/formlist">
-        <h2>Fill a form</h2>
-        <p>Click to choose the form you need.</p>
-      </a>
-    </li>
+      @foreach ($data['pending'] as $row)
+	  <li>
+        <a href="#">
+         <h2>Pending</h2>
+         <p>{{$row->form}}  from {{$row->fid}}</p>
+        </a>
+      </li>
+	  @endforeach
+	
+	  
     
-	 <li style="position:absolute;left:70%">
-      <a href="#">
-        <h2>Search</h2>
-        <p>Find professors who specialize in your field of interest.</p>
-      </a>
-    </li>
-   
-    <li style="position:absolute;left:43%;top:60%">
-      <a href="#">
-        <h2>Profile</h2>
-        <p>A resume is like software. Unless updated, it becomes obsolete.</p>
-      </a>
-    </li>
+	
   </ul>
-</body>
-</html>
+  <button class="sun-flower-button" style="position:absolute;top:90%;left:40%;width:20%;" onclick="download('{{$data['form']}}')">Download</button>
+  <button class="sun-flower-button" style="position:absolute;top:10%;left:40%;width:20%;" onclick="redir('/welcome/student/0/formlist/bonafide/upload')">Upload</button>
+
