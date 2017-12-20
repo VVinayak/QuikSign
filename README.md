@@ -13,13 +13,13 @@
 ## Running
 
 - After cloning the repo from Github, go to the folder containing this repository. In terminal, type
-'''
+```
 php artisan serve
-'''
+```
 
 - When done, open a browser window and type in the following URL
-'''
+```
 http://localhost:8080
-'''
+```
 
 - The site should have rendered successfully! The site is still rudimentary and needs expansion to scale for large usage.
