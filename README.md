@@ -8,6 +8,8 @@
 
 - [PHP](http://php.net/manual/en/install.php)
 
+The PHP installation also takes care of the MySQL database setup by using the WAMP server.
+
 - [Laravel](https://laravel.com/docs/5.5/installation)
 
 ## Running
@@ -22,4 +24,4 @@ php artisan serve
 http://localhost:8080
 ```
 
-- The site should have rendered successfully! The site is still rudimentary and needs expansion to scale for large usage.
+- The site should have rendered successfully! The site is still rudimentary and needs expansion to scale for large usage. We also want to add steganography components to protect signatures stored on the site
